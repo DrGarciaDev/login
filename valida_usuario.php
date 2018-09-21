@@ -5,7 +5,7 @@ $titulo = "ADMINISTRACION";
 
 $bandera=0;
 $_SESSION['usuario'] = $_POST["usuario"];
-$password =$_POST["password"];
+$password = $_POST["password"];
 $vusuario ="adm";
 
 include('include/header.php');
@@ -51,9 +51,9 @@ if($resultado){
            
             echo 
                 "
-                <button class='btn waves-effect blue' type='submit'>AGREGAR
+                <a class='btn btn-succes' href='agregar.php'>AGREGAR
                     <i class='material-icons right'>add_box</i>
-                </button>
+                </a>
 
                 <button class='btn waves-effect orange' type='submit'>EDITAR
                     <i class='material-icons right'>edit</i>
