@@ -9,11 +9,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $adeudo         = $_POST['Adeudo'];
     //script de agregar
     $con=mysqli_connect("localhost","id127413_mario","mario","id127413_datos");
-    $sql="INSERT INTO fraccionamiento(NoCasa,Password,nombreP,Adeudo) VALUES($nocasa,$password,$propietario,$adeudo)";
+    $sql="INSERT INTO fraccionamiento(NoCasa,Password,nombreP,Adeudo) 
+    VALUES('$nocasa', '$password', '$propietario', '$adeudo')";
     $retval=(mysqli_query($con,$sql));
 
     if ($retval > 0) {
-        echo "<script>alert('Registro agregado');</script>";
+        echo "<script>alert('Registro agregado con éxito');</script>";
     }else {
         echo "<script>alert('Registro NO agregado');</script>";
     }
@@ -33,26 +34,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         
         <div class="col s6">
 
-        <form method="POST" action="">
+        <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <h1>Agregar</h1>
             <div class="input-field">
-                <input id="Nocasa" name="Nocasa" type="text" data-length="10">
+                <input id="Nocasa" name="Nocasa" type="text" data-length="10" required>
                 <label for="Nocasa">No Casa</label>
             </div>
             <div class="input-field">
-                <input id="Password" name="Password" type="text" data-length="10">
+                <input id="Password" name="Password" type="text" data-length="10" required>
                 <label for="Password">Password</label>
             </div>
             <div class="input-field">
-                <input id="Propietario" name="Propietario" type="text" data-length="10">
+                <input id="Propietario" name="Propietario" type="text" data-length="10" required>
                 <label for="Propietario">Propietario</label>
             </div>
             <div class="input-field">
-                <input id="Adeudo" name="Adeudo" type="text" data-length="10">
+                <input id="Adeudo" name="Adeudo" type="text" data-length="10" required>
                 <label for="Adeudo">Adeudo</label>
             </div>
             <div class="input-field">
-                <button class='btn waves-effect green' type='submit'>AGREGAR
+                <button class='btn waves-effect blue' type='submit'>AGREGAR
                     <i class='material-icons right'>add_box</i>
                 </button>
             </div>

@@ -15,11 +15,11 @@ $server="localhost";
 $user="id127413_mario";
 $pass="mario";
 $bd="id127413_datos";
-$conexion=new mysqli($server,$user,$pass,$bd);
+$conexion = new mysqli($server,$user,$pass,$bd);
 //creamos la sentencia a ejecutar
-$sql="SELECT * FROM fraccionamiento where NoCasa = '".$_SESSION['usuario']."' ";
+$sql = "SELECT * FROM fraccionamiento where NoCasa = '".$_SESSION['usuario']."' ";
 //"Select * FROM fraccionamiento where NoCasa= 'adm'";
-$resultado=$conexion->query($sql);
+$resultado = $conexion->query($sql);
 
 if($resultado){
     
@@ -51,21 +51,21 @@ if($resultado){
            
             echo 
                 "
-                <a class='btn btn-succes' href='agregar.php'>AGREGAR
+                <a class='btn waves-effect blue' href='agregar.php'>AGREGAR
                     <i class='material-icons right'>add_box</i>
                 </a>
 
-                <button class='btn waves-effect orange' type='submit'>EDITAR
+                <a class='btn waves-effect orange' href='editar.php'>EDITAR
                     <i class='material-icons right'>edit</i>
-                </button>
+                </a>
 
-                <button class='btn waves-effect red' type='submit'>ELIMINAR
+                <a class='btn waves-effect red' href='eliminar.php'>ELIMINAR
                     <i class='material-icons right'>delete</i>
-                </button>
+                </a>
 
-                <button class='btn waves-effect waves-light' type='submit'>SALIR
+                <a class='btn waves-effect waves-light' href='salir.php'>SALIR
                     <i class='material-icons right'>close</i>
-                </button>
+                </a>
                 ";
             
             echo "</center>";
@@ -75,7 +75,9 @@ if($resultado){
                 <center>
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjVlmbY3zP9BqZD9gXudrQKK9kBXSuGVJlTEQclW7iX8pkzqFr">
                 <h1>Usuario no se encontro</h1>
-                <a href="index.php">Regresar</a>
+                <a class='btn waves-effect waves-light' href='salir.php'>SALIR
+                    <i class='material-icons right'>close</i>
+                </a>
                 </center>
     <?php
             }
