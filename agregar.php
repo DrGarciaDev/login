@@ -1,4 +1,8 @@
 <?php //codigo cambios
+session_start();
+
+$titulo = "AGREGAR";
+
 include('include/header.php');
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -58,7 +62,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 </button>
             </div>
             <div class="input-field">
-                <a class='btn waves-effect red' href='salir.php'>SALIR
+                <a class='btn waves-effect red' href='principal.php'>ATRÁS
                     <i class='material-icons right'>close</i>
                 </a>
             </div>

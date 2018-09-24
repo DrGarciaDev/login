@@ -1,4 +1,8 @@
 <?php //codigo cambios
+    session_start();
+
+    $titulo = "ELIMINAR";
+
     include('include/header.php');
 
     $con = mysqli_connect("localhost","id127413_mario","mario","id127413_datos");
@@ -87,7 +91,7 @@
             </table>
             <br>
             <br>
-            <a class='btn waves-effect red' href='salir.php'>SALIR<i class='material-icons right'>close</i></a>
+            <a class='btn waves-effect red' href='principal.php'>ATRÁS<i class='material-icons right'>close</i></a>
         </div>
 
         </div>

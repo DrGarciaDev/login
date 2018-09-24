@@ -1,4 +1,8 @@
 <?php //codigo cambios
+session_start();
+
+$titulo = "EDITAR";
+
 include('include/header.php');
 
 $con=mysqli_connect("localhost","id127413_mario","mario","id127413_datos");
@@ -26,7 +30,7 @@ if(isset($_POST['submit'])) {
     $nocasa=$_POST['Nocasa'];
     //$con=mysqli_connect("localhost","id127413_mario","mario","id127413_datos");
    
-    $sql="SELECT * FROM fraccionamiento WHERE NoCasa=$nocasa";
+    $sql = "SELECT * FROM fraccionamiento WHERE NoCasa= '$nocasa'; ";
     $retval=(mysqli_query($con,$sql));
     if(mysqli_num_rows($retval)>0){
       while($row=mysqli_fetch_assoc($retval)){
@@ -53,7 +57,7 @@ if(isset($_POST['submit'])) {
                   Adeudo:
                   <input type="text" name="Adeudo" value="<?php echo $row['Adeudo']; ?>" required><br>
                   <input class="btn waves-effect blue" type="submit" name="submit" value="Cambiar">
-                  <!-- <a class='btn waves-effect red' href='salir.php'>SALIR
+                  <!-- <a class='btn waves-effect red' href='ATRÁS.php'>ATRÁS
                     <i class='material-icons right'>close</i>
                   </a>
                 -->
@@ -85,7 +89,7 @@ if(isset($_POST['submit'])) {
             <input type="text" name="Nocasa" required>
             <br>
             <input class="btn btn-succes" type="submit" name="submit" value="Buscar">
-            <a class='btn waves-effect red' href='salir.php'>SALIR<i class='material-icons right'>close</i></a>
+            <a class='btn waves-effect red' href='principal.php'>ATRÁS<i class='material-icons right'>close</i></a>
             </form>
           </center>
         </div>
@@ -122,7 +126,7 @@ if(isset($_POST['submit'])) {
         Adeudo:
         <input type="text" name="adeudo" disabled><br>
         <input class="btn btn-succes" type="submit" name="submit" value="Buscar">
-        <a class='btn waves-effect red' href='salir.php'>SALIR<i class='material-icons right'>close</i></a>
+        <a class='btn waves-effect red' href='principal.php'>ATRÁS<i class='material-icons right'>close</i></a>
         </form>
         </center>
       </div>
